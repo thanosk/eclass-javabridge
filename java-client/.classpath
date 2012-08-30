@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="lib/commons-lang-2.3.jar"/>
+	<classpathentry kind="lib" path="lib/jbossall-client.jar"/>
+	<classpathentry kind="lib" path="lib/log4j.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-api-1.5.3.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-log4j12-1.5.3.jar"/>
+	<classpathentry kind="lib" path="lib/betacms-repository-api-2.1.1-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="lib/betacms-repository-client-2.1.1-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="lib/betacms-repository-commons-2.1.1-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="lib/betacms-repository-model-2.1.1-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="lib/commons-io-1.4.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

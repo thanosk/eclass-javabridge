@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!--
+
+		Copyright (C) 2003-2009  Greek Universities Network - GUnet
+
+		Open eClass is free software: you can redistribute it and/or modify it
+		under the terms of the GNU General Public License as published
+		by the Free Software Foundation, version 2 of the License. 
+		BetaCMS is distributed in the hope that it will be useful, but WITHOUT 
+		ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or 
+		FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public 
+		License for more details.
+
+		You should have received a copy of the GNU Lesser General Public
+		License along with Open eClass. If not, see
+		<http://www.gnu.org/licenses/>. 
+		
+	-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.openeclass.org/schema/betacms/web/eClassLesson"
+	xmlns:tns="http://www.openeclass.org/schema/betacms/web/eClassLesson"
+	xmlns:bccmsmodel="http://www.betaconceptframework.org/schema/betacms/model"
+	xmlns:workflowType="http://www.betaconceptframework.org/schema/betacms/admin/workflowType"
+	xmlns:webPublicationType="http://www.betaconceptframework.org/schema/betacms/web/webPublicationType"
+	xmlns:statisticType="http://www.betaconceptframework.org/schema/betacms/web/statisticType"
+	version="1.0">
+
+
+	<xs:import
+		namespace="http://www.betaconceptframework.org/schema/betacms/model"
+		schemaLocation="betacms-model-types-1.2.xsd" />
+		
+	<xs:import
+		namespace="http://www.betaconceptframework.org/schema/betacms/admin/workflowType"
+		schemaLocation="workflowType-1.0.xsd" />
+	
+	<xs:import
+		namespace="http://www.betaconceptframework.org/schema/betacms/web/webPublicationType"
+		schemaLocation="webPublicationType-1.0.xsd" />
+	
+	<xs:import
+		namespace="http://www.betaconceptframework.org/schema/betacms/web/statisticType"
+		schemaLocation="statisticType-1.0.xsd" />
+	
+	
+	
+	<xs:complexType name="eClassLessonUnitType"
+		bccmsmodel:description="This complex type represents an eClass Lesson Unit">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">eClass Lesson Unit</xs:documentation>
+			<xs:documentation xml:lang="el">
+				Ενότητα Ψηφιακού Μαθήματος eClass
+			</xs:documentation>
+		</xs:annotation>
+
+		<xs:complexContent>
+			<xs:extension base="bccmsmodel:complexCmsPropertyType">
+				<xs:sequence>
+
+					<xs:element name="title" 
+						minOccurs="1"
+						maxOccurs="1"
+						type="xs:string"
+						bccmsmodel:description="The title of the eClass Lesson Unit">
+						<xs:annotation>
+							<xs:documentation xml:lang="en">
+								Title
+							</xs:documentation>
+							<xs:documentation xml:lang="el">
+								Τίτλος
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+
+					<xs:element name="description" 
+						minOccurs="1"
+						maxOccurs="1"
+						type="xs:string"
+						bccmsmodel:description="The description of the eClass Lesson Unit">
+						<xs:annotation>
+							<xs:documentation xml:lang="en">
+								Description
+							</xs:documentation>
+							<xs:documentation xml:lang="el">
+								Περιγραφή
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="eClassLessonObject"
+		bccmsmodel:description="This element models a content object that holds an eClass Lesson">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+				eClass Lesson
+			</xs:documentation>
+			<xs:documentation xml:lang="el">
+				 Ψηφιακό Μάθημα eClass
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="bccmsmodel:contentObjectType">
+					<xs:sequence>
+
+						<xs:element name="lessonTitle" 
+							minOccurs="1"
+							maxOccurs="1"
+							type="xs:string"
+							bccmsmodel:description="The title of the eClass Lesson">
+							<xs:annotation>
+								<xs:documentation xml:lang="en">
+									Lesson Title
+								</xs:documentation>
+								<xs:documentation xml:lang="el">
+									Τίτλος Μαθήματος
+								</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+
+						<xs:element name="lessonDescription" 
+							minOccurs="1" 
+							maxOccurs="1"
+							type="xs:string"
+							bccmsmodel:stringFormat="RichText"
+							bccmsmodel:description="The description of the eClass Lesson">
+							<xs:annotation>
+								<xs:documentation xml:lang="en">
+									Short Lesson Description
+								</xs:documentation>
+								<xs:documentation xml:lang="el">
+									Σύντομη περιγραφή του μαθήματος
+								</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+
+						<xs:element name="keywords" 
+							minOccurs="1"
+							maxOccurs="1"
+							type="xs:string"
+							bccmsmodel:description="The keywords of the eClass Lesson">
+							<xs:annotation>
+								<xs:documentation xml:lang="en">
+									Keywords
+								</xs:documentation>
+								<xs:documentation xml:lang="el">
+									Λέξεις κλειδιά
+								</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+
+						<xs:element name="copyright" 
+							minOccurs="0"
+							maxOccurs="1"
+							type="xs:string"
+							bccmsmodel:description="The copyright info of the eClass Lesson">
+							<xs:annotation>
+								<xs:documentation xml:lang="en">
+									Copyright Info
+								</xs:documentation>
+								<xs:documentation xml:lang="el">
+									Πνευματικά Δικαιώματα
+								</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						
+						<xs:element name="authors" 
+							minOccurs="1"
+							maxOccurs="1"
+							type="xs:string"
+							bccmsmodel:description="The authors info of the eClass Lesson">
+							<xs:annotation>
+								<xs:documentation xml:lang="en">
+									Authors
+								</xs:documentation>
+								<xs:documentation xml:lang="el">
+									Συγγραφική Ομάδα
+								</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						
+						<xs:element name="project" 
+							minOccurs="0"
+							maxOccurs="1"
+							type="xs:string"
+							bccmsmodel:description="The project info of the eClass Lesson (for which project this lesson is targeted)">
+							<xs:annotation>
+								<xs:documentation xml:lang="en">
+									Project Info
+								</xs:documentation>
+								<xs:documentation xml:lang="el">
+									Έργο
+								</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						
+						<xs:element name="comments" 
+							minOccurs="0"
+							maxOccurs="1"
+							type="xs:string"
+							bccmsmodel:description="The comments for the eClass Lesson">
+							<xs:annotation>
+								<xs:documentation xml:lang="en">
+									Comments
+								</xs:documentation>
+								<xs:documentation xml:lang="el">
+									Σχόλια
+								</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						
+						<xs:element name="scormFiles" 
+							minOccurs="0" 
+							maxOccurs="unbounded"
+							type="bccmsmodel:binaryChannelType"
+							bccmsmodel:description="This property holds a scorm zip file relative to the content">
+							<xs:annotation>
+								<xs:documentation xml:lang="en">
+									Scorm File
+								</xs:documentation>
+								<xs:documentation xml:lang="el">
+									Αρχείο Scorm
+								</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						
+						<xs:element name="units" 
+							minOccurs="0" 
+							maxOccurs="unbounded"
+							type="tns:eClassLessonUnitType"
+							bccmsmodel:description="This property holds an eClass Lesson Unit relative to the content">
+							<xs:annotation>
+								<xs:documentation xml:lang="en">
+									eClass Lesson Unit
+								</xs:documentation>
+								<xs:documentation xml:lang="el">
+									Ενότητα Ψηφιακού Μαθήματος eClass
+								</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					
+						<xs:element name="webPublication" minOccurs="0" maxOccurs="1" type="webPublicationType:webPublicationType"/>
+			 			<xs:element name="workflow" minOccurs="0" maxOccurs="1" type="workflowType:workflowType"/>
+						<xs:element name="statistic"  minOccurs="0" maxOccurs="1" type="statisticType:statisticType" />
+						
+						<!-- THIS ELEMENT SHOULD BE ALWAYS DEFINED AS THE LAST ELEMENT OF A CONTENT OBJECT TYPE DEFINITION IN ORDER TO ALLOW DYNAMIC PROPERTIES (ASPECTS) TO
+						BE ADDED TO CONTENT OBJECT INSTANCES  -->
+						<xs:any minOccurs="0" maxOccurs="unbounded" processContents="strict"/>
+					
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:complexType name="arrayOfEClassLessonObjectType"
+		bccmsmodel:description="This complex type represents a list of REFERENCES to eClass Lesson objects (i.e. eClass Lesson content objects). This list can be attached to other content objects">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+				List of References to eClass Lesson Objects 
+			</xs:documentation>
+			<xs:documentation xml:lang="el">
+				Λίστα Αναφορών σε Ψηφιακά Μαθήματα eClass
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="bccmsmodel:complexCmsPropertyType">
+				<xs:sequence>
+					<xs:element name="eClassLessonObjectReference" 
+						minOccurs="0" 
+						maxOccurs="unbounded"
+						type="bccmsmodel:contentObjectType"
+						bccmsmodel:acceptedContentTypes="eClassLessonObject"
+						bccmsmodel:description="eClass Lesson Object Instance referenced by another content object instance"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+</xs:schema>
